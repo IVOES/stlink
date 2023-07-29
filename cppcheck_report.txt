@@ -1,0 +1,293 @@
+src/st-flash/flash.c:278:9: style: Variable 'err' is reassigned a value before the old one has been used. [redundantAssignment]
+    err = 0; // success
+        ^
+src/st-flash/flash.c:163:17: note: err is assigned
+            err = stlink_write_option_control_register32(sl, o.val);
+                ^
+src/st-flash/flash.c:278:9: note: err is overwritten
+    err = 0; // success
+        ^
+src/st-flash/flash.c:278:9: style: Variable 'err' is reassigned a value before the old one has been used. [redundantAssignment]
+    err = 0; // success
+        ^
+src/st-flash/flash.c:167:17: note: err is assigned
+            err = stlink_write_option_control_register1_32(sl, o.val);
+                ^
+src/st-flash/flash.c:278:9: note: err is overwritten
+    err = 0; // success
+        ^
+src/st-flash/flash.c:278:9: style: Variable 'err' is reassigned a value before the old one has been used. [redundantAssignment]
+    err = 0; // success
+        ^
+src/st-flash/flash.c:171:17: note: err is assigned
+            err = stlink_write_option_bytes_boot_add32(sl, o.val);
+                ^
+src/st-flash/flash.c:278:9: note: err is overwritten
+    err = 0; // success
+        ^
+src/st-flash/flash_opts.c:282:13: style: Statements following return, break, continue, goto or throw will never be executed. [unreachableCode]
+            if (ac > 1) { return invalid_args("otp read: [path]"); }
+            ^
+src/st-info/info.c:123:9: style: Condition 'sl' is always true [knownConditionTrueFalse]
+    if (sl) {
+        ^
+src/st-info/info.c:104:12: note: Assuming that condition 'sl==NULL' is not redundant
+    if (sl == NULL) { return(-1); }
+           ^
+src/st-info/info.c:123:9: note: Condition 'sl' is always true
+    if (sl) {
+        ^
+src/st-trace/trace.c:522:11: warning: %d in format string (no. 1) requires 'int' but the argument type is 'unsigned int'. [invalidPrintfArgType_sint]
+          snprintf(buffer + offset, sizeof(buffer) - offset, "%d, ", i);
+          ^
+src/st-trace/trace.c:520:37: portability: Shifting signed 32-bit value by 31 bits is implementation-defined behaviour [shiftTooManyBitsSigned]
+    if (trace->unknown_sources & (1 << i)) {
+                                    ^
+src/st-trace/trace.c:520:37: error: Signed integer overflow for expression '1<<i'. [integerOverflow]
+    if (trace->unknown_sources & (1 << i)) {
+                                    ^
+src/st-util/gdb-server.c:717:12: warning:inconclusive: Either the condition 'sl==NULL' is redundant or there is possible null pointer dereference: sl. [nullPointerRedundantCheck]
+    memset(sl->q_buf, 0, 4);
+           ^
+src/st-util/gdb-server.c:1851:20: note: Assuming that condition 'sl==NULL' is not redundant
+            if (sl == NULL || sl->chip_id == STM32_CHIPID_UNKNOWN) { cleanup(0); }
+                   ^
+src/st-util/gdb-server.c:1859:35: note: Calling function 'init_code_breakpoints', 1st argument 'sl' value is 0
+            init_code_breakpoints(sl);
+                                  ^
+src/st-util/gdb-server.c:717:12: note: Null pointer dereference
+    memset(sl->q_buf, 0, 4);
+           ^
+src/st-util/gdb-server.c:1026:9: style: The scope of the variable 'level' can be reduced. [variableScope]
+    int level;
+        ^
+src/st-util/gdb-server.c:1153:9: style: The scope of the variable 'ret' can be reduced. [variableScope]
+    int ret;
+        ^
+src/stlink-gui/gui.c:543:19: style: The scope of the variable 'store' can be reduced. [variableScope]
+    GtkListStore *store;
+                  ^
+src/stlink-gui/gui.c:605:12: style: The scope of the variable 'tmp_str' can be reduced. [variableScope]
+    gchar *tmp_str;
+           ^
+src/stlink-gui/gui.c:722:12: style: The scope of the variable 'file_uri' can be reduced. [variableScope]
+    GFile *file_uri;
+           ^
+src/stlink-gui/gui.c:723:13: style: The scope of the variable 'file_list' can be reduced. [variableScope]
+    gchar **file_list;
+            ^
+src/stlink-gui/gui.c:724:19: style: The scope of the variable 'file_data' can be reduced. [variableScope]
+    const guchar *file_data;
+                  ^
+src/stlink-gui/gui.c:726:19: style: The scope of the variable 'store' can be reduced. [variableScope]
+    GtkListStore *store;
+                  ^
+src/stlink-lib/chipid.c:80:11: warning: %i in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+      if (sscanf(value, "%i", &ts->chip_id) < 1) {
+          ^
+src/stlink-lib/chipid.c:115:11: warning: %i in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+      if (sscanf(value, "%i", &ts->flash_size_reg) < 1) {
+          ^
+src/stlink-lib/chipid.c:121:11: warning: %i in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+      if (sscanf(value, "%i", &ts->flash_pagesize) < 1) {
+          ^
+src/stlink-lib/chipid.c:127:11: warning: %i in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+      if (sscanf(value, "%i", &ts->sram_size) < 1) {
+          ^
+src/stlink-lib/chipid.c:133:11: warning: %i in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+      if (sscanf(value, "%i", &ts->bootrom_base) < 1) {
+          ^
+src/stlink-lib/chipid.c:139:11: warning: %i in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+      if (sscanf(value, "%i", &ts->bootrom_size) < 1) {
+          ^
+src/stlink-lib/chipid.c:145:11: warning: %i in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+      if (sscanf(value, "%i", &ts->option_base) < 1) {
+          ^
+src/stlink-lib/chipid.c:151:11: warning: %i in format string (no. 1) requires 'int *' but the argument type is 'unsigned int *'. [invalidScanfArgType_int]
+      if (sscanf(value, "%i", &ts->option_size) < 1) {
+          ^
+src/stlink-lib/chipid.c:67:5: warning: sscanf() without field width limits can crash with huge input data. [invalidscanf]
+    sscanf(buf, "%s %s", word, value);
+    ^
+src/stlink-lib/chipid.c:159:17: style: Variable 'p' is reassigned a value before the old one has been used. [redundantAssignment]
+      while ((p = strtok(NULL, " \t\n"))) {
+                ^
+src/stlink-lib/chipid.c:157:9: note: p is assigned
+      p = strtok(buf, " \t\n");
+        ^
+src/stlink-lib/chipid.c:159:17: note: p is overwritten
+      while ((p = strtok(NULL, " \t\n"))) {
+                ^
+src/stlink-lib/chipid.c:29:64: style:inconclusive: Function 'stlink_chipid_get_params' argument 1 names different: declaration 'chipid' definition 'chip_id'. [funcArgNamesDifferent]
+struct stlink_chipid_params *stlink_chipid_get_params(uint32_t chip_id) {
+                                                               ^
+src/stlink-lib/chipid.h:24:64: note: Function 'stlink_chipid_get_params' argument 1 names different: declaration 'chipid' definition 'chip_id'.
+struct stlink_chipid_params *stlink_chipid_get_params(uint32_t chipid);
+                                                               ^
+src/stlink-lib/chipid.c:29:64: note: Function 'stlink_chipid_get_params' argument 1 names different: declaration 'chipid' definition 'chip_id'.
+struct stlink_chipid_params *stlink_chipid_get_params(uint32_t chip_id) {
+                                                               ^
+src/stlink-lib/chipid.c:186:10: style: The scope of the variable 'nl' can be reduced. [variableScope]
+  size_t nl; // namelen
+         ^
+src/stlink-lib/chipid.c:187:18: style: The scope of the variable 'dir' can be reduced. [variableScope]
+  struct dirent *dir;
+                 ^
+src/stlink-lib/common.c:325:12: style: The scope of the variable 'timeout' can be reduced. [variableScope]
+  unsigned timeout;
+           ^
+src/stlink-lib/common_flash.c:603:5: style: Non-boolean value returned from function returning bool [returnNonBoolInBooleanFunction]
+    return -1;
+    ^
+src/stlink-lib/common_flash.c:102:19: style: Variable 'cr_lock_shift' is reassigned a value before the old one has been used. [redundantAssignment]
+    cr_lock_shift = FLASH_H7_CR_LOCK;
+                  ^
+src/stlink-lib/common_flash.c:98:19: note: cr_lock_shift is assigned
+    cr_lock_shift = STM32WB_FLASH_CR_LOCK;
+                  ^
+src/stlink-lib/common_flash.c:102:19: note: cr_lock_shift is overwritten
+    cr_lock_shift = FLASH_H7_CR_LOCK;
+                  ^
+src/stlink-lib/common_flash.c:1231:27: style: The scope of the variable 'idx' can be reduced. [variableScope]
+  unsigned int num_empty, idx;
+                          ^
+src/stlink-lib/common_flash.c:1279:27: style: The scope of the variable 'idx' can be reduced. [variableScope]
+  unsigned int num_empty, idx;
+                          ^
+src/stlink-lib/flashloader.c:419:9: warning: %u in format string (no. 1) requires 'unsigned int' but the argument type is 'signed int'. [invalidPrintfArgType_uint]
+        fprintf(stdout, "\r%3u/%3u pages written", ++write_block_count,
+        ^
+src/stlink-lib/md5.c:41:14: style: The scope of the variable 'saved_a' can be reduced. [variableScope]
+    uint32_t saved_a;
+             ^
+src/stlink-lib/md5.c:42:14: style: The scope of the variable 'saved_b' can be reduced. [variableScope]
+    uint32_t saved_b;
+             ^
+src/stlink-lib/md5.c:43:14: style: The scope of the variable 'saved_c' can be reduced. [variableScope]
+    uint32_t saved_c;
+             ^
+src/stlink-lib/md5.c:44:14: style: The scope of the variable 'saved_d' can be reduced. [variableScope]
+    uint32_t saved_d;
+             ^
+src/stlink-lib/md5.c:181:14: style: The scope of the variable 'free' can be reduced. [variableScope]
+    uint32_t free;
+             ^
+src/stlink-lib/option_bytes.c:243:7: style: The scope of the variable 'err' can be reduced. [variableScope]
+  int err = -1;
+      ^
+src/stlink-lib/option_bytes.c:243:11: style: Variable 'err' is assigned a value that is never used. [unreadVariable]
+  int err = -1;
+          ^
+src/stlink-lib/sg.c:359:9: style: The scope of the variable 'try' can be reduced. [variableScope]
+    int try = 0;
+        ^
+src/stlink-lib/sg.c:361:9: style: The scope of the variable 'ret' can be reduced. [variableScope]
+    int ret;
+        ^
+src/stlink-lib/usb.c:90:14: style: The scope of the variable 't' can be reduced. [variableScope]
+    int res, t, retry = 0;
+             ^
+src/stlink-lib/usb.c:455:9: style: The scope of the variable 'res' can be reduced. [variableScope]
+    int res;
+        ^
+src/stlink-lib/usb.c:579:9: style: The scope of the variable 'res' can be reduced. [variableScope]
+    int res;
+        ^
+src/stlink-lib/usb.c:607:9: style: The scope of the variable 'rep_len' can be reduced. [variableScope]
+    int rep_len = 2;
+        ^
+src/win32/sys_time.c:11:16: style: The scope of the variable 'tzflag' can be reduced. [variableScope]
+    static int tzflag = 0;
+               ^
+src/win32/sys_time.c:15:23: style: Variable 'ulint.LowPart' is assigned a value that is never used. [unreadVariable]
+        ulint.LowPart = ftime.dwLowDateTime;
+                      ^
+src/win32/sys_time.c:16:24: style: Variable 'ulint.HighPart' is assigned a value that is never used. [unreadVariable]
+        ulint.HighPart = ftime.dwHighDateTime;
+                       ^
+src/win32/win32_socket.c:71:12: style: Condition 'rc>0' is always true [knownConditionTrueFalse]
+    if (rc > 0) {
+           ^
+src/win32/win32_socket.c:69:12: note: Assuming condition 'rc<=0' is false
+    if (rc <= 0) { return(rc); }
+           ^
+src/win32/win32_socket.c:71:12: note: Condition 'rc>0' is always true
+    if (rc > 0) {
+           ^
+src/win32/win32_socket.c:256:26: style: The scope of the variable 'spanp' can be reduced. [variableScope]
+    register const char *spanp;
+                         ^
+src/win32/win32_socket.c:257:18: style: The scope of the variable 'c' can be reduced. [variableScope]
+    register int c, sc;
+                 ^
+tests/flash.c:40:22: warning: Obsolete function 'alloca' called. In C99 and later it is recommended to use a variable length array instead. [allocaCalled]
+    char *cmd_line = alloca(strlen(test->cmd_line) + 1);
+                     ^
+src/stlink-lib/md5.c:273:0: style: The function 'Md5Calculate' is never used. [unusedFunction]
+
+^
+tests/sg.c:11:0: style: The function 'mark_buf' is never used. [unusedFunction]
+
+^
+src/st-util/semihosting.c:28:0: style: The function 'mem_read_u16' is never used. [unusedFunction]
+
+^
+src/st-util/semihosting.c:41:0: style: The function 'mem_read_u32' is never used. [unusedFunction]
+
+^
+src/stlink-lib/sg.c:782:0: style: The function 'stlink_clr_hw_bp' is never used. [unusedFunction]
+
+^
+src/stlink-lib/common_flash.c:1326:0: style: The function 'stlink_fcheck_flash' is never used. [unusedFunction]
+
+^
+src/stlink-gui/gui.c:26:0: style: The function 'stlink_gui_class_init' is never used. [unusedFunction]
+
+^
+src/stlink-gui/gui.c:32:0: style: The function 'stlink_gui_init' is never used. [unusedFunction]
+
+^
+src/stlink-lib/read_write.c:77:0: style: The function 'stlink_read_all_unsupported_regs' is never used. [unusedFunction]
+
+^
+src/stlink-lib/common.c:1197:0: style: The function 'stlink_run_at' is never used. [unusedFunction]
+
+^
+src/stlink-lib/sg.c:764:0: style: The function 'stlink_set_hw_bp' is never used. [unusedFunction]
+
+^
+src/stlink-lib/common.c:474:0: style: The function 'stlink_set_swdclk' is never used. [unusedFunction]
+
+^
+src/stlink-lib/sg.c:717:0: style: The function 'stlink_write_dreg' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:157:0: style: The function 'win32_accept' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:144:0: style: The function 'win32_connect' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:14:0: style: The function 'win32_poll' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:197:0: style: The function 'win32_read_socket' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:172:0: style: The function 'win32_shutdown' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:131:0: style: The function 'win32_socket' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:254:0: style: The function 'win32_strsep' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:206:0: style: The function 'win32_strtok_r' is never used. [unusedFunction]
+
+^
+src/win32/win32_socket.c:189:0: style: The function 'win32_write_socket' is never used. [unusedFunction]
+
+^
+nofile:0:0: information: Cppcheck cannot find all the include files (use --check-config for details) [missingInclude]
+
